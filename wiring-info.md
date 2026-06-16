@@ -146,7 +146,6 @@ ESP32-S3 punya pin GPIO 0–21 dan 26–48 (GPIO 22–25 tidak ada di chip ESP32
 | 9  | Bebas (input/output digital, ADC1_CH8, touch) |
 | 10 | Bebas (input/output digital, ADC1_CH9, touch) |
 | 11 | Bebas (input/output digital, ADC2_CH0, touch) |
-| 12 | Bebas (input/output digital, ADC2_CH1, touch) |
 | 13 | Bebas (input/output digital, ADC2_CH2, touch) |
 | 14 | Bebas (input/output digital, ADC2_CH3, touch) |
 | 17 | Bebas (input/output digital, ADC2_CH6) |
@@ -159,6 +158,7 @@ ESP32-S3 punya pin GPIO 0–21 dan 26–48 (GPIO 22–25 tidak ada di chip ESP32
 | GPIO | Catatan |
 |---|---|
 | 1  | Bebas di Arduino sketch maupun firmware XiaoZhi. |
+| 12 | ADC2_CH1, RTC, FSPICLK, TOUCH12. **Dipakai expansion board** — jangan dipakai ulang sebagai output saat expansion terpasang. |
 | 3  | Strapping pin (JTAG select). Aman sebagai input runtime; hindari sebagai output saat boot. |
 | 19 | USB D− (Native USB). Free hanya jika USB switch di posisi CH343 dan tidak pakai Native USB. |
 | 20 | USB D+ (Native USB). Free hanya jika USB switch di posisi CH343 dan tidak pakai Native USB. |
@@ -189,8 +189,8 @@ ESP32-S3 punya pin GPIO 0–21 dan 26–48 (GPIO 22–25 tidak ada di chip ESP32
 ## Ringkasan Cepat
 
 - **Pin terpakai:** 0, 4, 5, 6, 7, 15, 16, 21, 40, 41, 42, 45, 47, 48 → **14 pin**
-- **Pin free aman:** 2, 8, 9, 10, 11, 12, 13, 14, 17, 18, 38, 39 → **12 pin**
-- **Pin free bersyarat:** 1, 3, 19, 20, 43, 44, 46 → **7 pin**
+- **Pin free aman:** 2, 8, 9, 10, 11, 13, 14, 17, 18, 38, 39 → **11 pin**
+- **Pin free bersyarat:** 1, 3, 12, 19, 20, 43, 44, 46 → **8 pin**
 - **Pin terkunci PSRAM/Flash:** 26–37 → **tidak boleh disentuh**
 
 ---
